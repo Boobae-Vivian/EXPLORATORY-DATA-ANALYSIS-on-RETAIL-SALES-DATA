@@ -48,7 +48,7 @@ The first step of this project is to import the essential libraries required for
   
 Once these libraries are imported, the next step is to load the sales dataset into the Jupyter Notebook environment as a DataFrame using the pd.read_csv() function. The dataset is assigned to a variable named df, allowing easy reference throughout the analysis.  
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The following code snippet imports the necessary Python libraries for data analysis and visualization:
+&nbsp;&nbsp;&nbsp;&nbsp;The following code snippet imports the necessary Python libraries for data analysis and visualization:
 
 ```python
 import pandas as pd   
