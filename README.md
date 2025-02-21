@@ -1,6 +1,6 @@
 # EXPLORATORY-DATA-ANALYSIS-on-RETAIL-SALES-DATA
 ## INTRODUCTION
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In today's competitive retail industry, data-driven insights play a vital role in business growth and decision-making. This project focuses on analyzing a dataset containing 1,000 rows and 9 columns of retail sales data using Python. The primary objective is to perform Exploratory Data Analysis (EDA) to uncover patterns, trends, and key insights that can help the retail business optimize sales, improve inventory management, and enhance overall performance.  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In today's competitive retail industry, data-driven insights play a vital role in business growth and decision-making. This project focuses on analyzing a dataset containing 1,000 rows and 9 columns of retail sales data using Python. The primary objective is to perform Exploratory Data Analysis (EDA) to uncover patterns, trends, and key insights that can help the retail business optimize sales, improve inventory management, and enhance overall performance.  
 By leveraging Python libraries such as Pandas, Matplotlib, and Seaborn, this analysis will involve data cleaning, visualization, and statistical exploration to identify key sales drivers and customer behavior trends. The findings from this study will provide actionable recommendations to support data-driven decision-making and business strategy improvements.
 ## PROBLEM STATEMENT
 1. Descriptive Statistics: Calculate key statistics (mean, median, mode, and standard deviation) for:
@@ -26,7 +26,6 @@ By leveraging Python libraries such as Pandas, Matplotlib, and Seaborn, this ana
 5. Customer & Product Analysis
 6. Correlation & Insights Extraction
  
-By completing this project, I demonstrated proficiency in data analysis, visualization, and business insights generation, which are valuable skills for a Data Analyst role.
 
 ## STAGES TO NAVIGATE IN THE EXPLORATORY DATA ANALYSIS PROJECT on RETAIL SALES DATA
 
@@ -65,6 +64,42 @@ df
 ```
 LIBRARIES AND DATA IMPORTATION
 :-----------------------------:
-![](library.png)
+![](Saless/library.png)
+
+2. "Data Assessment to Detect Data Quality Issues":
+--- 
+Data assessment is the fundamental process of evaluating imported data to determine its suitability and cleanliness for its intended purpose. There are two primary methods of data assessment: virtual assessment and programmatic assessment. In this case, programmatic assessment was utilized, which involves assessing data using codes, especially when dealing with datasets containing numerous rows and columns that cannot be feasibly examined manually.
+
+Several attributes and functions provided by the pandas library were employed for data assessment, including:
+
+- df.shape: It returns the dimensions of the DataFrame (number of rows and columns). In this case, the dataset contains 1,000 rows and 9 columns.
+- df.info(): This provides a concise summary of the DataFrame, including data types and memory usage. The output revealed that the "date column" has an incorrect data type (object - instead of datetime), as highlighted with a yellow rectangle shape in the snapshot below.
+- df.isnull().sum(): Counts the number of missing values in each column. The result indicates that there are no missing values in the dataset.
+- df.duplicated().sum(): Identifies duplicate rows in the DataFrame. The output confirms that no duplicate records are present.
+ 
+Findings:  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Based on these assessments, the only data quality issue detected was the incorrect data type for the date column.
+
+These assessments and data quality issue detected are illustrated in the snapshots below. 
+A    |B    
+:---:|:---:
+![](Saless/datass1.png)|![](Saless/datass2.png)
+
+3. "Data Cleaning":
+   ---
+As detected from the data assessment, the data quality issue which is the wrong object data type for the date column  has to be cleaned and corrected to its right data type which is the datetime data type .
+to tackle this, we would use the datetime function from the pandas library and its code snippet is as folllows
+```python
+df['Date'] = pd.to.datetime(df['Date'])
+df.info()
+```
+The result of this output is found in the snapshot below, highlighting before the data cleaning and after
+A    |B    
+:---:|:---:
+![](Saless/datass1.png)|![](Saless/dataclean.png)
+
+
+
+
 
 
