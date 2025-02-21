@@ -110,7 +110,13 @@ BEFORE CLEANING  |AFTER  CLEANING
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To compute the mean, median, mode, and standard deviation for Quantity, Price per Unit, and Total Amount, we first store these columns in a variable for easy reference. In this case, we assign them to a variable named columns.  
 Next, we calculate the statistical measures using a dictionary, storing the results in a variable called statistics. Finally, we convert the dictionary into a DataFrame for better visualization.  
 The code used for this calculation, along with the resulting output, is shown in the snapshot below.
+
 ![](Saless/destat.png)
+
+2, Sales Trend Analysis:
+   - Calculate total monthly sales performance over time
+   - Analyze the average monthly sales trend
+   ---
 
 
 
