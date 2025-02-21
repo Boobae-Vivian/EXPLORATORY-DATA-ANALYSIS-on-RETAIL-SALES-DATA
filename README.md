@@ -108,15 +108,46 @@ BEFORE CLEANING  |AFTER  CLEANING
    - Total Amount
    ---
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To compute the mean, median, mode, and standard deviation for Quantity, Price per Unit, and Total Amount, we first store these columns in a variable for easy reference. In this case, we assign them to a variable named columns.  
-Next, we calculate the statistical measures using a dictionary, storing the results in a variable called statistics. Finally, we convert the dictionary into a DataFrame for better visualization.  
+Next, we calculate the statistical measures using a dictionary, storing the results in a variable called statistics. Finally, we convert the dictionary into a DataFrame for better visualization. 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The computed statistics are presented in the table below:
+METRIC           |MEAN            | MEDIAN    |MODE       |STANDARD DEVIATION
+:---------------:|:--------------:|:---------:|:----------:|:----------------:
+Quantity	        |2.514           |	3.0	    |4	              |1.132734        
+Price per Unit   |179.890         |	50.0    	 |50	           |189.681356      
+Total Amount	  |456.000         |	135.0	    |50	           |559.997632      
+
 The code used for this calculation, along with the resulting output, is shown in the snapshot below.
 
 ![](Saless/destat.png)
 
 2, Sales Trend Analysis:
-   - Calculate total monthly sales performance over time
-   - Analyze the average monthly sales trend
    ---
+   - Calculate total monthly sales performance over time  
+   - Analyze the average monthly sales trend  
+   ---
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To analyze sales trends over time, the date column should be set as the index, which is essential for time series analysis. The conversion of the date column to an index is shown in the snapshot below.
+![](Saless/timeindex.png)
+
+
+- Calculate total monthly sales performance over time:
+  --  
+  The total monthly sales performance can be calculated by resampling the data by month and summing the Total Amount column. The result is stored in a variable named "sales_trend". After computing the sales trend, we plot a line graph using plt.plot(), applying necessary formatting and adjustments to enhance readability.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The complete code used for this analysis, along with the resulting visualization, is shown in the snapshot below.
+LINE of CODES    |VISUALIZATION
+:---------------:|:--------------:
+![](Saless/timeindex1.png)|![](Saless/timeindex2.png)
+
+- Analyze the average monthly sales trend:
+  --
+  To analyze the average monthly sales trend, we resample the data by month and apply the mean function to calculate the average Total Amount for each month. The result is stored in a variable named "sales_trend". After computing the sales trend, we visualize it using a line graph with plt.plot(), applying appropriate formatting and adjustments to improve readability.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The complete code used for this analysis, along with the resulting visualization, is shown in the snapshot below.
+LINE of CODES    |VISUALIZATION
+:---------------:|:--------------:
+![](Saless/timeindex3.png)|![](Saless/timeindex4.png)
+
+   
 
 
 
