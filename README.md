@@ -67,7 +67,7 @@ LIBRARIES AND DATA IMPORTATION
 ![](Saless/library.png)
 
 2. "Data Assessment to Detect Data Quality Issues":
---- 
+   --- 
 Data assessment is the fundamental process of evaluating imported data to determine its suitability and cleanliness for its intended purpose. There are two primary methods of data assessment: virtual assessment and programmatic assessment. In this case, programmatic assessment was utilized, which involves assessing data using codes, especially when dealing with datasets containing numerous rows and columns that cannot be feasibly examined manually.
 
 Several attributes and functions provided by the pandas library were employed for data assessment, including:
@@ -87,18 +87,30 @@ A    |B
 
 3. "Data Cleaning":
    ---
-As detected from the data assessment, the data quality issue which is the wrong object data type for the date column  has to be cleaned and corrected to its right data type which is the datetime data type .
-to tackle this, we would use the datetime function from the pandas library and its code snippet is as folllows
+From the data assessment, the date column was identified as having an incorrect data type (object). To ensure accurate time-based analysis, it needs to be converted to the correct datetime format.
+
+To resolve this issue, we would use the to_datetime() function from the Pandas library:
 ```python
-df['Date'] = pd.to.datetime(df['Date'])
+
+df['Date'] = pd.to_datetime(df['Date'])  
 df.info()
-```
-The result of this output is found in the snapshot below, highlighting before the data cleaning and after
-A    |B    
-:---:|:---:
-![](Saless/datass1.png)|![](Saless/dataclean.png)
+``` 
+After executing this code, the date column is successfully converted to the correct datetime data type. The snapshot below highlights the data type before and after cleaning, enclosed in a yellow rectangular shape.
+BEFORE CLEANING  |AFTER  CLEANING
+:---------------:|:--------------:
+![](before.png)|![](Saless/dataclean.png)
 
-
+4. "Data Manipulation and Visualization (Analysis of the Problem Statement)":
+   ---
+1, Descriptive Statistics: Calculate key statistics (mean, median, mode, and standard deviation) for:
+   - Quantity
+   - Price per Unit
+   - Total Amount
+   ---
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To compute the mean, median, mode, and standard deviation for Quantity, Price per Unit, and Total Amount, we first store these columns in a variable for easy reference. In this case, we assign them to a variable named columns.  
+Next, we calculate the statistical measures using a dictionary, storing the results in a variable called statistics. Finally, we convert the dictionary into a DataFrame for better visualization.  
+The code used for this calculation, along with the resulting output, is shown in the snapshot below.
+![](Saless/destat.png)
 
 
 
