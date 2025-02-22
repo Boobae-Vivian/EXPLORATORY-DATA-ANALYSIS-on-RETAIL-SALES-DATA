@@ -103,6 +103,7 @@ BEFORE CLEANING  |AFTER  CLEANING
 4. "Data Manipulation and Visualization (Analysis of the Problem Statement)":
    ---
 1, Descriptive Statistics: Calculate key statistics (mean, median, mode, and standard deviation) for:
+   --
    - Quantity
    - Price per Unit
    - Total Amount
@@ -121,7 +122,7 @@ The code used for this calculation, along with the resulting output, is shown in
 ![](Saless/destat.png)
 
 2, Sales Trend Analysis:
-   ---
+   --
    - Calculate total monthly sales performance over time  
    - Analyze the average monthly sales trend  
    ---
@@ -146,6 +147,72 @@ LINE of CODES    |VISUALIZATION
 LINE of CODES    |VISUALIZATION
 :---------------:|:--------------:
 ![](Saless/timeindex3.png)|![](Saless/timeindex4.png)
+
+3, Customer Demographics & Purchasing Behavior:
+   --
+   - Analyze gender distribution of customers
+   - Identify total revenue and average spending per customer
+   - Calculate average spending per gender to assess purchasing pattern.
+   ---
+- Analyze gender distribution of customers:
+  --
+  To analyze the gender distribution of customers, we use the value_counts() function with the normalize=True parameter to calculate the percentage of each gender. Multiplying by 100 converts the proportions into percentages. The following line of code performs this calculation:
+  ```python
+  print(df['Gender'].value_counts(normalize=True) * 100)
+  ```
+  The output of this analysis shows that:
+  
+  51.0% of customers are female  
+  49.0% of customers are male.
+  
+- Identify total revenue and average spending per customer:
+  --
+  To determine the total revenue and average spending per customer, we use the sum and mean functions on the Total Amount column. These calculations are stored in two separate variables:  
+  total_revenue: Stores the total revenue by summing all values in the Total Amount column.
+  average_spending: Stores the average spending per customer by calculating the mean of the Total Amount column.  
+  The following code snippet performs these calculations:
+  ```python
+  total_revenue = df['Total Amount'].sum()  
+  average_spending = df['Total Amount'].mean()  
+  print(f"Total Revenue: ${total_revenue:,.2f}")  Formats the total revenue with commas and two decimal places for readability.
+  print(f"Average Spending per Customer: ${average_spending:,.2f}") Formats the average spending with two decimal places.
+  ```
+  The output of this analysis is seen below:
+    
+  Total Revenue: $456,000.00  
+  Average Spending per Customer: $456.00
+
+- Calculate average spending per gender to assess purchasing pattern:
+  --
+  To compute the average spending per gender, we use the following approach:  
+  groupby('Gender'): Groups the data by gender.  
+  mean(): Calculates the average (mean) of the Total Amount column for each gender.  
+  round(1): Rounds the result to one decimal place for better readability.  
+  Store the result in a variable named avg_spending_gender.  
+  The following code snippet performs this analysis:
+  ```python
+  avg_spending_gender = df.groupby('Gender')['Total Amount'].mean().round(1)  
+  print(avg_spending_gender)
+  ```
+  The output of this analysis is:
+  GENDER           | RESULT            
+  ---------------|--------------|
+     Female      |456.5
+     Male	     |455.4         |
+
+The snapshot below shows the customer demographics & purchasing behavior.  
+  
+  Customer Demographics & Purchasing Behavior
+  :-----------------------------:
+  ![](Saless/customer.png)
+  Customer Demographics & Purchasing Behavior
+     
+
+
+
+ 
+
+   
 
    
 
