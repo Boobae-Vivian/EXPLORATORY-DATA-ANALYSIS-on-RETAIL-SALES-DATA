@@ -15,9 +15,10 @@ By leveraging Python libraries such as Pandas, Matplotlib, and Seaborn, this ana
    - Identify total revenue and average spending per customer
    - Calculate average spending per gender to assess purchasing patterns
 4. Visualization:
-   - Group sales by product category
+   - Identify the top 3 selling product
    - Identify and visualize the top three best-selling product categories
-   - Compute and visualize the correlation matrix between Quantity, Price per Unit, and Total Amount to identify relationships between these variables.
+   - Compute and visualize the correlation matrix between Quantity, Price per Unit, and Total Amount.
+
 ## SKILLS AND CONCEPTS DEMONSTRATED 
 1. Data Manipulation & Cleaning
 2. Descriptive Statistics & Exploratory Data Analysis (EDA)
@@ -205,8 +206,23 @@ The snapshot below shows the customer demographics & purchasing behavior.
   Customer Demographics & Purchasing Behavior
   :-----------------------------:
   ![](Saless/customer.png)
-  Customer Demographics & Purchasing Behavior
-     
+
+4, Visualization:
+   --
+   - Identify the top 3 selling product
+   - Identify and visualize the top three best-selling product categories
+   - Compute and visualize the correlation matrix between Quantity, Price per Unit, and Total Amount
+   ---
+   - Identify the top 3 selling product:
+     --
+     to Identify the top 3 selling product, first , we group the product category column with the group by function , then  sum the total amount column by using the sum function, afterwhich we emloy the sort values function and ascend to false and finally the head function to fetch the top 3 product. the result of this analysis would be stored in a variable known as top categories which would be used to plot a seamless bar chart. And to crraete this barchart, wed be using the plt.bar function , after which write some line of codes to add, labels, title, eliminate the square lines enclosing the bar visualizations, and show exact values on each bar  top_categories = df.groupby('Product Category')['Total Amount'].sum().sort_values(ascending=False).head(3) 
+
+# Create bar chart
+plt.figure(figsize=(10, 5))
+plt.bar(top_categories.index, top_categories.values, color='yellow')
+
+# Add labels,title and Eliminate the square lines enclosing the bar visualization
+plt.title('Top Three(3) Selling Product Categories', fontsize=14)
 
 
 
