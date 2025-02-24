@@ -240,6 +240,20 @@ The snapshot below shows the customer demographics & purchasing behavior.
      LINE of CODES    | BAR CHART VISUALIZATION
      :---------------:|:--------------:
      ![](Saless/barcal.png)|![](Saless/barvis.png)
+
+     Pie Chart:  
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To better understand the sales distribution among the top 3 selling product categories, we can use a pie chart to display 
+     their percentage contributions. This is 
+     achieved using the plt.pie() function, where we pass the necessary arguments to customize the visualization.(The code snippet for this visualization is shown in the 
+     snapshot below).  
+     The results of the code snippet shows that:
+     - Electronics: 34.4% (highest sales percentage)
+     - Clothing: 34.1%
+     - Beauty: 31.5%
+
+     LINE of CODES    | PIE CHART VISUALIZATION
+     :---------------:|:--------------:
+     ![](Saless/piecal.png)|![](Saless/piechart.png)
  
 
 
