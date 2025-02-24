@@ -212,7 +212,7 @@ The snapshot below shows the customer demographics & purchasing behavior.
    - Identify and visualize the top three best-selling product categories
    - Compute and visualize the correlation matrix between Quantity, Price per Unit, and Total Amount
    ---
-   - Identify and visualize the top three best-selling product categories
+   - Identify and visualize the top three best-selling product categories:
      --
      To identify and visualize the top three best-selling product categories, we follow these steps:
 
@@ -253,7 +253,16 @@ The snapshot below shows the customer demographics & purchasing behavior.
 
      LINE of CODES    | PIE CHART VISUALIZATION
      :---------------:|:--------------:
-     ![](Saless/piecal.png)|![](Saless/piechart.png)
+     ![](pie1.png)|![](Saless/piechart.png)
+     
+   - Compute and visualize the correlation matrix between Quantity, Price per Unit, and Total Amount:
+     --
+     To analyze the relationship between Quantity, Price per Unit, and Total Amount, we compute the correlation matrix and visualize it using a heatmap. The code 
+     snippet that achieves this is found in the snapshots below:
+      LINE of CODES and VISUALIZATION    
+     :-------------------------------:
+     ![](Saless/heatmap.png)
+
  
 
 
