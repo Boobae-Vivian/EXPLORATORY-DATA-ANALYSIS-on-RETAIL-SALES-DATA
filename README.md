@@ -226,7 +226,8 @@ The snapshot below shows the customer demographics & purchasing behavior.
      ```python
      top_categories = df.groupby('Product Category')['Total Amount'].sum().sort_values(ascending=False).head(3)
      ```
-     To create a seamless bar chart, we use plt.bar(), followed by additional formatting steps such as:
+     Bar Chart:  
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;To create a seamless bar chart, we use plt.bar(), followed by additional formatting steps such as:
      - Adding labels and a title for better readability.
      - Removing unnecessary borders to enhance visualization.
      - Displaying exact values on each bar for clarity.   
@@ -262,6 +263,26 @@ The snapshot below shows the customer demographics & purchasing behavior.
       LINE of CODES and VISUALIZATION    
      :-------------------------------:
      ![](Saless/heatmap.png)
+
+     Interpreting Correlation Values:
+     --
+     - Total Amount vs. Quantity (0.37):  
+     This is a moderate positive correlation. As Quantity increases, Total Amount also tends to increase, but the relationship is not very strong.
+
+     - Total Amount vs. Price per Unit (0.87):  
+       A Strong positive correlation. This indicates that Total Amount is highly influenced by Price per Unit. As Price per Unit increases, Total Amount increases 
+       significantly.
+       
+     - Quantity vs. Price per Unit (0.02):  
+       The correlation here is Very weak. This is equivalent to no correlation. It suggests that the Price per Unit does not significantly impact the Quantity of items 
+       purchased.
+
+       Conclusion:  
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Total Amount is more strongly correlated with Price per Unit (0.87) than with Quantity (0.37).  
+       Quantity and Price per Unit have almost no correlation (0.02), meaning changes in price don’t significantly impact the quantity purchased.
+
+## RECOMMENDATIONS
+
 
  
 
