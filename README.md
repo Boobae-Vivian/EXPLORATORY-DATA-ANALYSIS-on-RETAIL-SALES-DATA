@@ -15,7 +15,7 @@ By leveraging Python libraries such as Pandas, Matplotlib, and Seaborn, this ana
    - Identify total revenue and average spending per customer
    - Calculate average spending per gender to assess purchasing patterns
 4. Visualization:
-   - Identify the top 3 selling product
+   - Group sales by product category
    - Identify and visualize the top three best-selling product categories
    - Compute and visualize the correlation matrix between Quantity, Price per Unit, and Total Amount.
 
@@ -209,20 +209,38 @@ The snapshot below shows the customer demographics & purchasing behavior.
 
 4, Visualization:
    --
-   - Identify the top 3 selling product
    - Identify and visualize the top three best-selling product categories
    - Compute and visualize the correlation matrix between Quantity, Price per Unit, and Total Amount
    ---
-   - Identify the top 3 selling product:
+   - Identify and visualize the top three best-selling product categories
      --
-     to Identify the top 3 selling product, first , we group the product category column with the group by function , then  sum the total amount column by using the sum function, afterwhich we emloy the sort values function and ascend to false and finally the head function to fetch the top 3 product. the result of this analysis would be stored in a variable known as top categories which would be used to plot a seamless bar chart. And to crraete this barchart, wed be using the plt.bar function , after which write some line of codes to add, labels, title, eliminate the square lines enclosing the bar visualizations, and show exact values on each bar  top_categories = df.groupby('Product Category')['Total Amount'].sum().sort_values(ascending=False).head(3) 
+     To identify and visualize the top three best-selling product categories, we follow these steps:
 
-# Create bar chart
-plt.figure(figsize=(10, 5))
-plt.bar(top_categories.index, top_categories.values, color='yellow')
+     - Group the data by the Product Category column using the groupby() function.
+     - Sum the Total Amount for each category using the sum() function.
+     - Sort the values in descending order using sort_values(ascending=False).
+     - Extract the top 3 categories using the head(3) function.
+     - Store the result in a variable named top_categories, which will be used for visualization.  
+     The following code performs this analysis:
 
-# Add labels,title and Eliminate the square lines enclosing the bar visualization
-plt.title('Top Three(3) Selling Product Categories', fontsize=14)
+     ```python
+     top_categories = df.groupby('Product Category')['Total Amount'].sum().sort_values(ascending=False).head(3)
+     ```
+     To create a seamless bar chart, we use plt.bar(), followed by additional formatting steps such as:
+     - Adding labels and a title for better readability.
+     - Removing unnecessary borders to enhance visualization.
+     - Displaying exact values on each bar for clarity.   
+     (The complete code for this visualization is shown in the snapshot below).
+     
+     The top 3 selling product categories are:
+     - Electronics – $156,905.00 (highest sales)
+     - Clothing
+     - Beauty
+     
+     LINE of CODES    | BAR CHART VISUALIZATION
+     :---------------:|:--------------:
+     ![](Saless/barcal.png)|![](Saless/barvis.png)
+ 
 
 
 
